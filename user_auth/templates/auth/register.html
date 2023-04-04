@@ -1,0 +1,157 @@
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-compalitable" content="IE=edge">
+    <meta name="veiwport" content="width=device-width , initial-scale=1.0">
+    <title>Register</title>
+    <!------------------ font link ------------------------->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/fontawesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/brands.min.css">
+</head>
+<body>
+    <div class="container">
+        <div class="form-box">
+            <h1>Register</h1>
+            <form action="" method="POST">
+                {% csrf_token %}
+                <div class="input-box">
+                    <input type="text" name="username" placeholder="Username" required>
+                </div>
+                <div class="input-box">
+                    <input type="email" name="email" placeholder="Email" required>
+                </div>
+                <div class="input-box">
+                    <input type="password" name="password" placeholder="Password" required>
+                </div>
+                <div class="input-box">
+                    <input type="password" name="confirm_password" placeholder="Confirm Password" required>
+                </div>
+                <div class="input-box">
+                    <input type="submit" value="Register">
+                </div>
+            </form>
+            <div class="input-group">
+                <a href="{% url 'login' %}">Already have an account? Login</a>
+            </div>
+        </div>
+    </div>
+
+    <style>
+        *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Poppins', sans-serif;
+        }
+        body{
+            min-height: 100vh;
+            background: #222;
+        }
+        .container{
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .error-message{
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+        .error-message p{
+            color: red;
+            font-size: 20px;
+            font-weight: 600;
+            text-align: center;
+        }
+        .header{
+            width: 100%;
+            height: 100px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .header h1{
+            color: #fff;
+            font-size: 40px;
+            font-weight: 600;
+        }
+        .form-box{
+        width: 400px;
+        height: 500px;
+        background: #fff;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        padding: 40px 30px;
+        box-sizing: border-box;
+        border-radius: 10px;
+        box-shadow: 0 15px 25px rgba(0,0,0,.5);
+        }
+        .form-box h1{
+            margin-bottom: 30px;
+            color: #222;
+            text-align: center;
+            font-size: 30px;
+            font-weight: 600;
+        }
+        .input-box{
+            position: relative;
+            width: 100%;
+            height: 50px;
+            margin-bottom: 20px;
+        }
+        .input-box input{
+            width: 100%;
+            height: 100%;
+            padding: 0 10px;
+            font-size: 16px;
+            color: #222;
+            letter-spacing: 1px;
+            border: none;
+            outline: none;
+            background: #f1f1f1;
+            border-radius: 5px;
+        }
+        .input-group a{
+            position: absolute;
+            transform: translateY(-50%);
+            font-size: 14px;
+            color: #333;
+            text-decoration: none;
+            transition: .5s;
+            cursor: pointer;
+            }
+        .input-group a:hover{
+            color: #666;  
+            }
+        .input-box input[type="submit"]{
+            display: block;
+            width: 100%;
+            padding: 10px 0;
+            font-size: 16px;
+            font-weight: 500;
+            color: #0ff;
+            text-align: center;
+            background: #333;
+            border: none;
+            outline: none;
+            cursor: pointer;
+            transition: .5s;
+            }
+        .input-box input[type="submit"]:hover{
+            background: #666;
+            }
+    </style>
+</body>
+
+</html>
